@@ -1,13 +1,13 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "copy-all",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "Copy all the text in the current file as Markdown.",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
-		"dev": "node esbuild.config.mjs",
-		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
-		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"dev": "bun esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && bun esbuild.config.mjs production",
+		"version": "bun version-bump.mjs && git add manifest.json versions.json",
 		"lint": "eslint ."
 	},
 	"keywords": [],

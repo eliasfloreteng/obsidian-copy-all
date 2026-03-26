@@ -2,14 +2,14 @@ import { type App, PluginSettingTab, Setting } from "obsidian";
 import type CopyAllPlugin from "./main";
 
 export interface CopyAllPluginSettings {
-	mySetting: string;
+	includeFilename: boolean;
 }
 
 export const DEFAULT_SETTINGS: CopyAllPluginSettings = {
-	mySetting: "default",
+	includeFilename: true,
 };
 
-export class GeneralSettingsTab extends PluginSettingTab {
+export class CopyAllSettingTab extends PluginSettingTab {
 	plugin: CopyAllPlugin;
 
 	constructor(app: App, plugin: CopyAllPlugin) {
@@ -23,14 +23,15 @@ export class GeneralSettingsTab extends PluginSettingTab {
 		containerEl.empty();
 
 		new Setting(containerEl)
-			.setName("Settings #1")
-			.setDesc("It's a secret")
-			.addText((text) =>
-				text
-					.setPlaceholder("Enter your secret")
-					.setValue(this.plugin.settings.mySetting)
+			.setName("Include filename as heading")
+			.setDesc(
+				"Prepend the filename (without .md) as a top-level heading when copying.",
+			)
+			.addToggle((toggle) =>
+				toggle
+					.setValue(this.plugin.settings.includeFilename)
 					.onChange(async (value) => {
-						this.plugin.settings.mySetting = value;
+						this.plugin.settings.includeFilename = value;
 						await this.plugin.saveSettings();
 					}),
 			);

@@ -12,7 +12,7 @@ export default class CopyAllPlugin extends Plugin {
 		await this.loadSettings();
 
 		this.addCommand({
-			id: "copy-all",
+			id: "copy-entire-file",
 			name: "Copy entire file to clipboard",
 			icon: "copy",
 			checkCallback: (checking: boolean) => {

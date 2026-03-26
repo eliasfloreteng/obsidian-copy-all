@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "copy-all",
+	"name": "Copy All",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Copy all the text in the current file as Markdown.",
+	"author": "Elias Floreteng",
+	"authorUrl": "https://github.com/eliasfloreteng",
 	"isDesktopOnly": false
 }
